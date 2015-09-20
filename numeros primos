@@ -1,0 +1,36 @@
+package Numerosprimos;
+import java.util.*;
+import java.io.*;
+/**
+ *
+ * @author Ivan / Sebastian
+ */
+public class Numerosprimos {
+
+    public static void main(String[] args) throws Exception{
+        int numero = 0;
+        int i = 0;
+        int j=0;
+        int a=0;
+    
+            System.out.print( "Introduzca un numero: " ); 
+    
+            BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));   
+            numero = Integer.parseInt( entrada.readLine() ); 
+    
+            for(i=numero;i>0;i--){
+                a=0;
+            for (j=i;j>0;j--){
+                if(i%j==0){
+                    a++;
+                }
+            }
+                if (a==2){
+                    System.out.print(+i+" es primo \n ");
+                }
+                else{
+                }
+            }
+    
+        }
+    }
