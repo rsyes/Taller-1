@@ -1,0 +1,77 @@
+package tareaahorcado;
+
+import java.util.*;
+import java.util.Random;
+
+public class ahorcado {
+
+    public static void main(String[] args){
+        Scanner lector;
+        String jugada;
+        String hang;
+        String posible[]={"cantor","marciano","pajaro","brinco","bardo","pelmazo","vitalic","blockhead"
+        ,"jamiroquai","inception","calambre","portazo","lapiz","puerta"};
+        String letra;
+        String mem;
+        Random rnd; 
+        int a;
+        int i,j,l;
+        int b,m,n;
+        boolean x,y;
+        y=false;
+        m=0;
+        b=0;
+        l=0;
+        n=0;
+        hang="d(o|o)p";
+        mem="";
+        letra="";
+        rnd = new Random();
+        n=(int)(Math.random()*14);
+        lector=new Scanner (System.in);
+        
+        System.out.println(" Bienvenido al juego de ahorcado \n");
+        jugada= posible[n];
+        a=jugada.length();
+        System.out.println(" la palabra tiene " + a + " letras " + jugada);
+        if(b==0){
+            for(i=0;i<a;i++){
+                System.out.print("_");
+            }
+            }
+        while( y==false){
+            System.out.println(" escriba una letra ");  
+            letra= lector.next();
+            if(jugada.indexOf(letra) != -1){
+                 b++;
+            }
+            else{
+                m++;
+            }
+            mem = mem + letra;
+            System.out.println(" \n letra(s) que ha usado:  " + mem + " ");
+            System.out.println(" nuestro ahorcado va así :  "+ hang.substring(0, m));
+            l=+mem.length();
+            for(i=0;i<a;i++){
+                x=false;
+                for( j=0;j<l;j++){
+                    if((mem.charAt(j)==jugada.charAt(i))){
+                    System.out.print(jugada.charAt(i));
+                    x=true;
+                }
+            }
+            if(x==true){
+            }
+            else{
+            System.out.print("_");
+            }
+            }
+            if(m==7){
+                System.out.print(" \n\n "+jugada);
+            }
+            if(b==(a)|| m==7 ){
+                y=true;
+            }
+            }
+        }
+}
